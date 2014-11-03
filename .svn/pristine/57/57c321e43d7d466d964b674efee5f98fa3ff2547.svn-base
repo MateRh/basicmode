@@ -1,0 +1,8 @@
+<meta>
+	<info description="Shader - DOF" version="0.0.6" type="script" />
+	<script src="shaders/depth_of_field/c_dof.lua" type="client" />
+	<file src="shaders/depth_of_field/fx/dBlurH.fx" type="client" />
+	<file src="shaders/depth_of_field/fx/dBlurV.fx" type="client" />
+	<file src="shaders/depth_of_field/fx/getDepth.fx" type="client" />
+	<file src="shaders/depth_of_field/fx/mta-helper.fx" type="client" />
+</meta>

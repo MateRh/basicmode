@@ -1,0 +1,12 @@
+function debugBM( cmd, arg )
+	if arg == "ps" then
+		return addEventHandler( "onClientRender", getRootElement(),onClientRenderPS ) or removeEventHandler( "onClientRender", getRootElement(),onClientRenderPS )
+	end
+end
+addCommandHandler( "dbg", debugBM)
+
+
+function onClientRenderPS ()
+	local ps = getElementData( localPlayer,"p_status" )
+	dxDrawText ( "PS [ 1]: "..tostring(ps[1] ).."\nPS [2]: "..tostring(ps[2]), screenWidth-100, 100 )
+end

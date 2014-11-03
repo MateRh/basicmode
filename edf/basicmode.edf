@@ -1,0 +1,57 @@
+<def name="basicmode">
+	
+	<setting name="Interior" friendlyname="Map interior" type="integer" description="Interior of base/arena. Please change this if your map interior is diferent from interior 0.               USE ONLY NUMBERS!" default="0" required="true"/>
+
+	<element name="spwn_" friendlyname="1. The attackers spawn ( Bases )" icon="edf/vehicle.png">
+        <data name="position" type="coord3d" default="0,0,0" />
+		<data name="mode" type="boolean" required="false" default="false"/>
+		<data name="interior" type="integer" default="0"  />
+        <marker  size="10" type="cylinder" color="#00a02d" interior="!interior!" />
+    </element>
+	
+	<element name="Team1" friendlyname="2. The team1 spawn" icon="edf/spawnpoint1.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="interior" type="integer" default="0"  />
+		<ped  model="287" rotation="!rotation!" interior="!interior!"/>
+	</element>
+	<element name="Team2" friendlyname="3. The team2/defenders spawn" icon="edf/spawnpoint2.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="interior" type="integer" default="0"  />
+		<ped  model="311" rotation="!rotation!" interior="!interior!"/>
+	</element>
+	<element name="tdm" friendlyname="4. TDM player spawn" icon="edf/tdm.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="interior" type="integer" default="0"  />
+		<ped  model="0" rotation="!rotation!" interior="!interior!"/>
+	</element>
+	<element name="Central_Marker" friendlyname="5. Base marker / Arena central point" icon="edf/marker.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="interior" type="integer" default="0"  />
+		<marker  size="1.5" type="cylinder" color="#ffffffff" interior="!interior!"/>
+	</element>
+	<element name="Anti_Rush_Point" friendlyname="6. Anti Rush Element" icon="edf/point.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<blip  icon="0" size="0.125" color="10,255,10" />
+		<data name="interior" type="integer" default="0"  />
+		<object model="2993" interior="!interior!"/>
+	</element>
+	<element name="forbidden_zone" friendlyname="7. forbidden zone" icon="edf/no_guns.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="Team" type="selection:Attack,Defense,Both" default="Defense" />		
+		<data name="Action" type="selection:block shooting,block entry" default="block shooting" />		
+		<data name="GroupID" type="integer" default="1"  />
+		<data name="interior" type="integer" default="0"  />
+		<data name="High" type="number" default="7"  />
+		<blip icon="0" size="0.125" color="255,10,10" />
+		<marker size="0.25" type="cylinder" color="#cd2200" interior="!interior!" />
+	</element>	
+	<element name="Int" friendlyname="8. Interior link" icon="edf/enter.png">
+		<data name="position" type="coord3d" default="0,0,0" />
+		<data name="interior" type="integer" default="0"  />
+		<data name="target_rotation" type="integer" default="0"  />
+		<marker size="1.0" type="cylinder" color="#ffea05" interior="!interior!"/>
+		<data name="target" type="element:Int" description="Exit" required="false" default="" />
+	</element>
+	
+	<script src="edf/edf_client.lua" type="client" />
+</def>

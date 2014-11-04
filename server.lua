@@ -863,7 +863,7 @@ local players = getElementsByType ( "player" )
 		bindKey( v, 'h', "up", callFriendsYoureInTrouble)
 		bindKey( v, "L", "up", switchLights )
 		setElementData( v, 'avatar', md5( getPlayerSerial( v ) )..'.png' )
-		removeElementData( v, '#c' )
+--		removeElementData( v, '#c' )
 		removeElementData( v, 'Health' )
 	end	
 	
@@ -907,8 +907,7 @@ addEventHandler ( "onPlayerJoin", getRootElement(), function( )
 		bindKey( source, 'num_4', "up", callFriendsYoureInTrouble )
 		bindKey( source, 'h', "up", callFriendsYoureInTrouble )  
 		bindKey( source, "L", "up", switchLights )
-		removeElementData( source, '#c' )
-		removeElementData( source, 'Health' )
+
 		setElementData( source, 'avatar', md5( getPlayerSerial( source ) )..'.png' )
 		setTimer( function(source)  updateNameTag( source ) end, 500, 1, source )
 		read_player_data( source )

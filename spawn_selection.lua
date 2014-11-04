@@ -746,7 +746,7 @@ end
 				showHud()
 				changeHudFunctionality( "base", map_preStart.map_name )
 					local x,y,z = t_spw_a.spawns_t[t_spw_a.id][1],t_spw_a.spawns_t[t_spw_a.id][2],t_spw_a.spawns_t[t_spw_a.id][3]
-					callServer("spawnOnRound",localPlayer, getPlayerTeam( localPlayer ), false, false )
+--					callServer("spawnOnRound",localPlayer, getPlayerTeam( localPlayer ), false, false )
 					removeEventHandler( "onClientRender", getRootElement(),_core_attack_selector_r )
 					removeEventHandler("onClientClick", getRootElement(), onClick_spawn_select)
 					destroyElement( t_spw_a.target )

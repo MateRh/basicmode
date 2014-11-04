@@ -49,9 +49,16 @@ local assigned_colors = { [ team1 ] = {}, [ team2 ] = {} }
 		return setPlayerTeam_ ( player, team )
 	end	
 
+	function debugOutput( ... )
+		print( table.concat({ ... }, ", ") )
+	end	
+
+
 
 function onTeamJoin( player, team, lastteam )
-	if getElementData( player, '#c' ) and team == lastteam then
+
+	debugOutput( tostring( player ), tostring( getElementData( player, '#c' ) ), tostring( assigned_colors[ team ][ getElementData( player, '#c' ) ] ), tostring( team ), tostring( lastteam ) )
+	if getElementData( player, '#c' ) and team ~= nil and team == lastteam then
 		return 0
 	end	
 		if team == team3 then
@@ -65,6 +72,8 @@ function onTeamJoin( player, team, lastteam )
 		assigned_colors[ team ][ getElementData( player, '#c' ) ] = player
 
 		return 0
+	elseif getElementData( player, '#c' )   then
+		print( 'save the world' )	
 	end	
 
 	for k, v in ipairs ( colors_scheme ) do 
@@ -80,3 +89,24 @@ function onTeamJoin( player, team, lastteam )
 	end	
 
 end	
+
+
+addEventHandler ( "onResourceStart", getResourceRootElement(getThisResource()), 
+    function ( resource )
+	local players = getElementsByType ( "player" ) 
+		for k, v in pairs( players ) do 
+			removeElementData( v, '#c' )
+		end
+		assigned_colors = { [ team1 ] = {}, [ team2 ] = {} }
+   end 
+)
+
+addEventHandler ( "onPlayerQuit", getRootElement(), function (  )
+	local v = source
+	if getElementData( v, '#c' ) then
+		if assigned_colors[ getPlayerTeam( v ) ][ getElementData( v, '#c' ) ] then
+			assigned_colors[ getPlayerTeam( v ) ][ getElementData( v, '#c' ) ] = nil
+		end	
+		removeElementData( v, '#c' )
+	end
+end )

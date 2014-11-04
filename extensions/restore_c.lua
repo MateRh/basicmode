@@ -24,13 +24,14 @@ function createRestoreSceneWindow( places_data, player )
 			for k1,v1 in pairs( places_data ) do
 				for k,v in ipairs( v1 ) do
 					local row = guiGridListAddRow ( restore_data.gui.grid )
-						if i == 0 then
-							guiGridListSetSelectedItem ( restore_data.gui.grid, row, 0 )
-						end	
+
 					guiGridListSetItemText ( restore_data.gui.grid, row, 1, v.name.." ( "..k.." )", false, false )
 					guiGridListSetItemText ( restore_data.gui.grid, row, 2, v.time, false, false )
 					guiGridListSetItemText ( restore_data.gui.grid, row, 3, math.round( v.hp, 1 ).."%", false, false )
 					guiGridListSetItemText ( restore_data.gui.grid, row, 4, getVehicleName( v.vehicle.veh) or " No ", false, false )
+						if i == 0 then
+							guiGridListSetSelectedItem ( restore_data.gui.grid, row, 1 )
+						end	
 					i = i + 1
 						if i == 1 then
 							local cache = "\n"

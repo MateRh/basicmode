@@ -1078,7 +1078,7 @@ local rand_tc = getTickCount(  )
 		--	math.randomseed( ( seed or 0 ) + primeNumbers[ math.min( #primeNumbers, currentUsedPrimeNumberIndex ) ] )
 				
 		math.randomseed( ( getRealTime( ).timestamp - 1414956600 ) + ( seed or 0 ) ) 	
-			print( ( getRealTime( ).timestamp - 1414956600 ) + ( seed or 0 ) )
+		--	print( ( getRealTime( ).timestamp - 1414956600 ) + ( seed or 0 ) )
 
 		type = type or 'base'
 		if type == 'base' then
@@ -1451,8 +1451,8 @@ addEventHandler( "onPlayerChat", getRootElement(), _forceChatWithTags )
 	
 	function _readCurrentRevision( )
 		local db_ = false
-			if fileExists( ".svn/wc.db" ) then
-				db_ = dbConnect( "sqlite", ".svn/wc.db", "", "", "share=0" )
+			if fileExists( ".git/logs/refs/heads/master" ) then
+				db_ = fileOpen( '.git/logs/refs/heads/master' ) 
 			end	
 			if not db_ then
 				local file = fileOpen ( '/core/_revision.ver')
@@ -1462,13 +1462,24 @@ addEventHandler( "onPlayerChat", getRootElement(), _forceChatWithTags )
 				fileClose( file )
 				return 0;
 			end
-		local result = dbPoll( dbQuery( db_, "SELECT * FROM NODES" ), -1 )
+		local limit, count, search, pos = fileGetSize( db_ ), 0, true, 0 
+		local rawText = fileRead( db_, limit+1 )	
+			while( search == true ) do
+				local res = string.find( rawText, '\n', pos )
+					if type( res ) == 'number' then
+						pos = res+1
+						count=count+1
+					else
+						search = false	
+					end	
+			end
+		local result = 264 + count
 		local file = fileCreate ( '/core/_revision.ver')
 			fileSetPos( file, 0 )
-			fileWrite ( file, base64Encode ( result[#result].revision ) )  
+			fileWrite ( file, base64Encode ( result ) )  
 			fileClose( file )
-			setElementData( global_element, "_revision", result[#result].revision )
-			destroyElement ( db_ )
+			setElementData( global_element, "_revision", result )
+			fileClose ( db_ )
 	end	
 	
 	_readCurrentRevision( )
@@ -1495,8 +1506,8 @@ addCommandHandler('seed', function( p, cmd, a)
 		local res = rand_.main ( 'base', {0,124} )
 
 
-		outputServerLog( 'base: '..tostring( res )..'  in '..tostring( getTickCount() - test_of_me ) )
-	end, 1000,0 )
+		print( 'base: '..tostring( res )..'  in '..tostring( getTickCount() - test_of_me ) )
+	end, 1500, tonumber( a ) or 0 )
 end )
 
 

@@ -136,7 +136,7 @@
 						setTimer(function()
 							finishRound( getTeamByType( "Attack" ), getTeamByType( "Defense" ), "All players from opposite team has been eliminate." )
 							--locked_check = false
-						end,500,1)	
+						end,500,1 )	
 						return
 					else
 						locked_check = true

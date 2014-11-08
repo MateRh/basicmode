@@ -33,12 +33,6 @@ end
 
 
 
-
-addEventHandler ( "onClientPlayerSpawn", getLocalPlayer(), function ( )
-
-	_protect_enable( )
-end )
-
 	_initialLoaded( "maps_code_c.lua" )	
 
 end

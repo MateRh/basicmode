@@ -272,14 +272,19 @@ bindKey ( 'tab', 'both', function ( _, state )
 				showChat( false )
 			end	
 
-			blur_enabled_was = blur_remote( true, 3, false, true, sb_cache.global.x, sb_cache.global.y,  sb_cache.global.w,  sb_cache.global.h )
+			if _localPlayer:getStatus( 3 ) ~= 1 then
+				blur_enabled_was = blur_remote( true, 3, false, true, sb_cache.global.x, sb_cache.global.y,  sb_cache.global.w,  sb_cache.global.h )
+				bindKey ( 'mouse2', 'both', onMouse )
+			end	
 		verifyCount ( )	
 		addEventHandler( 'onClientRender', getRootElement(), onFrameScoreBoard )
-		bindKey ( 'mouse2', 'both', onMouse )
+		
 	else
 	--	sb_cache.renderEnabled = false
-		onMouse( 'up')
-		unbindKey ( 'mouse2', 'both', onMouse )
+		if _localPlayer:getStatus( 3 ) ~= 1 then
+			onMouse( 'up')
+			unbindKey ( 'mouse2', 'both', onMouse )
+		end	
 
 		removeEventHandler( 'onClientRender', getRootElement(), onFrameScoreBoard )
 			iSscoreboard = false

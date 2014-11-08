@@ -75,7 +75,6 @@ local function startWaterRefract()
 			dxSetShaderValue ( myShader, "normalMult", 0.24 )
 			dxSetShaderValue ( myShader, "gBuffAlpha", 0.30)
 			dxSetShaderValue ( myShader, "gDepthFactor", 0.03)
-			outputChatBox( ":EHE" )
 			-- Apply to global txd 13
 			engineApplyShaderToWorldTexture ( myShader, "waterclear256" )
 			

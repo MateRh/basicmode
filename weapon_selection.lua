@@ -189,7 +189,9 @@ addEventHandler ( "onClientGUIClick", _weapons_Gui.window, _weapons_Gui.onClient
 		guiSetSize( _weapons_Gui.window, 620, 380/2, false )
 		guiSetPosition( _weapons_Gui.window, (screenWidth-620)/2, (screenHeight- _weapons_Gui.width ), false )
 	end]]
-
+	if _localPlayer:getStatus( 2 ) == 2 then
+		_protect_enable( )
+	end
 end
 
     function  _weapons_Gui.onClientMouseMove (aX, aY)

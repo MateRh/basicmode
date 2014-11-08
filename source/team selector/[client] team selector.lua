@@ -115,7 +115,7 @@ _team_selector.snd = sndGlobal
 			end	
 			_team_selector.animTimer = setTimer( _team_selector.applyAnim, 3000, 0 )
 			_team_selector.applyAnim()
-			_players[ localPlayer ]:updateStatus(  3, 1 )
+			_localPlayer:updateStatus(  3, 1 )
 
 
 end
@@ -223,14 +223,14 @@ function _team_selector.onMouseClick( __, __, ax, ay )
 		--	changeHudFunctionality( "lobby" )
 			showCursor( false )
 			if getElementData(localPlayer,"Kills") == false then
-				setElementData(localPlayer,"Kills",0)
-				setElementData(localPlayer,"Deaths",0)
-				setElementData(localPlayer,"Damage",0)
-				setElementData(localPlayer,"Score",0)
+				setElementData(localPlayer,"Kills", 0 )
+				setElementData(localPlayer,"Deaths", 0 )
+				setElementData(localPlayer,"Damage", 0 )
+				setElementData(localPlayer,"Score", 0 )
 			end
 			_players[ localPlayer ]:updateStatus(  2, 1 )
 			showHud()
-			removeEventHandler( 'onClientRender', getRootElement(), intro.func )
+			--removeEventHandler( 'onClientRender', getRootElement(), intro.func )
 
 		end	
 

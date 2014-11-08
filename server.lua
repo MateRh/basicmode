@@ -876,7 +876,7 @@ local players = getElementsByType ( "player" )
 			setElementFrozen( v, false )
 		end
 	
-	end, 1000, 1 )
+	end, 50, 1 )
 	
 
 		function forceNormalNickName( player, playerName )

@@ -29,7 +29,7 @@
 					setElementData( global_element, "interior", get(getResourceName(res)..".#Interior") or 0 )
 					local round_type = getElementData(global_element,"map_info")
 					if round_type[1] == "Base" then
-					
+					_elements._xyz[ getTeamByType( "Attack" ) ] = getElementsByType ( "spwn_",map_root )
 						for k, v in ipairs( _elements.marker_data ) do
 						local markPos = {getElementData(v, "posX"),getElementData(v, "posY"),getElementData(v, "posZ")}
 							local mark = createMarker ( markPos[1], markPos[2], markPos[3], "cylinder", 2, 210, 210, 210, 100)
@@ -89,17 +89,10 @@
 				local team = getPlayerTeam( _p )
 				cretePlayerBlip( _p, team )
 				local round_type, interior = getElementData( _g,"map_info"), getElementData( _g, "interior" )
-					for k, v in pairs( _elements._xyz[team] ) do
-						outputChatBox( tostring( k )..': '..tostring( v ) )
-					end 	
-					local ran = math.random( 1,#_elements._xyz[team] )
-					outputChatBox( tostring( ran ) )
+				local ran = math.random( 1,#_elements._xyz[team] )
 				local position = _elements._xyz[ team ][ ran ]
-
 				local x, y, z = getElementData( position, "posX"), getElementData( position, "posY"), getElementData( position, "posZ")
 				local rotation = findRotation( x, y ,_elements.marker[1], _elements.marker[2] )
-
-
 				local cache_s = { [team1] = 1, [team2] = 2 }
 				local _o =  { -0.5, 0.5, -0.25, 0.25 }
 				x, y = x + _o[ math.random( 1, 4 )], y + _o[ math.random( 1, 4 )]
@@ -109,13 +102,12 @@
 				_players[ _p ]:updateStatus(  2, 2 )
 				setPedArmor( _p, tonumber( settings_.main[ 7 ][ 2 ]) or 0 )
 
-		--		callClient( player, "_protect_enable" )
+				callClient( player, "_protect_enable", true )
 				if round_paused then 
 					toggleAllControls( _p, false, true, false )
 					setElementFrozen( _p, true )
 				end	
-				--setCameraTarget ( player, player )
-		end
+ 		end
 		
 		function onVehicleEnterSafeZone( element )
 

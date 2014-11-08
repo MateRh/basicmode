@@ -520,7 +520,11 @@ end )
 
 	 
 function _core_attack_selector()
-
+	wasFrozenBefore = isElementFrozen( localPlayer )
+	callServer( 'setElementFrozen', localPlayer, true )
+	callServer( 'setElementAlpha', localPlayer, 0 )
+	callServer( 'setElementCollisionsEnabled', localPlayer, false )
+	
 	t_spw_a = {r_anim = { rot=0,}, cache_i = {} ,tc=getTickCount(),a_gui={},id=1,anim=1,r_time=false,r_team=1,team=0,slot = 2,target={},scale_ = {348,409,220,35,65,440,0.15,14,202},spawns_t={},spw_r ={},tc=getTickCount(),ce={} }
 		setElementInterior( localPlayer, 0 )
 		resetSkyGradient( )

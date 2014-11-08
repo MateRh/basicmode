@@ -73,9 +73,9 @@ function ( dataName )
 			end	
 	end	
 end )
-setTimer( function() 
+
 	callServer( 'classSyncReq', localPlayer );
-end, 1000,  1 ) 
+
 
 	_initialLoaded( "source/round management/[client] round management.lua" )	
 

@@ -1,6 +1,6 @@
 
 _initialLoading[ "vehicle_selection.lua" ] = function ( )
-	
+wasFrozenBefore = false	
 local vehicleCachefPos = {}
 local _vehicleClass = { 
 
@@ -15,7 +15,8 @@ function _vehicleCreate( x, y, z, no_w )
 
 	_players[ localPlayer ]:updateStatus(  3, 2 )
 	vehicleCachefPos = { x,y,z }
-	
+
+
 	if getWaterLevel ( x,y,z ) ~= false and getWaterLevel ( x,y,z ) > getGroundPosition( x,y,z ) then
 		z = getWaterLevel( x,y,z + 5 ) -0.5
 	else
@@ -355,6 +356,10 @@ function forceCloseVehicleS()
 end
 
 function onVehicleAccpet()
+
+	callServer( 'setElementFrozen', localPlayer, wasFrozenBefore )
+	callServer( 'setElementAlpha', localPlayer, 255 )
+	callServer( 'setElementCollisionsEnabled', localPlayer, true )	
 
 	if source == _vehicleClass.fGui.edit then
 		if guiGetText( source ) == "Search..." or  #guiGetText( source ) == guiEditGetCaretIndex ( source ) then

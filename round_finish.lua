@@ -123,7 +123,7 @@
 		if locked_check == true then
 			return 0;
 		end
-		if true == true then
+		if pause == true then
 			return 0;
 		end	
 		local teams_c = { getElementData(  getTeamByType( "Attack" ), "p_count" ), getElementData(  getTeamByType( "Defense" ), "p_count" ) }

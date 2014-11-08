@@ -57,7 +57,7 @@ local assigned_colors = { [ team1 ] = {}, [ team2 ] = {} }
 
 function onTeamJoin( player, team, lastteam )
 
-	debugOutput( tostring( player ), tostring( getElementData( player, '#c' ) ), tostring( assigned_colors[ team ][ getElementData( player, '#c' ) ] ), tostring( team ), tostring( lastteam ) )
+--	debugOutput( tostring( player ), tostring( getElementData( player, '#c' ) ), tostring( assigned_colors[ team ][ getElementData( player, '#c' ) ] ), tostring( team ), tostring( lastteam ) )
 	if getElementData( player, '#c' ) and team ~= nil and team == lastteam then
 		return 0
 	end	

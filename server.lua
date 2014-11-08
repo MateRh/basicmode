@@ -539,6 +539,7 @@
 				local cache_s = { [team1] = 1, [team2] = 2 }
 				
 				spawnPlayer ( player, _lobby_spawn[ _index ] [ 1 ]+ math.random( -0.75, 0.75 ), _lobby_spawn[ _index ] [ 2 ] + math.random( -0.75, 0.75 ), _lobby_spawn[ _index ] [ 3 ] ,math.random(1,360), settings_.teams[ cache_s[team] ][2][2])
+				setElementAlpha( player, 255 )
 				setCameraTarget(player)
 				setPedArmor( player, tonumber( settings_.main[ 7 ][ 2 ]) or 0 ) 
 			else
@@ -551,6 +552,7 @@
 						spawnPlayer ( player, _lobby_spawn[ _index ] [ 1 ]+ math.random( -0.75, 0.75 ), _lobby_spawn[ _index ] [ 2 ] + math.random( -0.75, 0.75 ), _lobby_spawn[ _index ] [ 3 ] ,math.random(1,360), 310 )
 						callClient( player, 'disableSpecate' )
 					end
+				setElementAlpha( player, 255 )	
 				setCameraTarget( player )
 				setPedArmor( player, tonumber( settings_.main[ 7 ][ 2 ]) or 0 ) 
 				
@@ -636,20 +638,21 @@
 			--// Naliczanie smierci + Sprawdzanie Graczy
 			
 			setElementData ( source,"Deaths", ( getElementData ( source,"Deaths" ) + 1 ) )	
-			setElementData ( source,"Health",0)
+			setElementData ( source,"Health", 0 )
 			
 			local team = getPlayerTeam( source )
 				if isElement( blips.game[ source ]  ) then
 					destroyElement( blips.game[ source ]  )
 					blips.game[ source ] = nil
 				end	
-			if stsP[1] == "c" and stsP[2] == 6 then		
+			if _players[ source ]:getStatus(  2 ) == 2 then		
 				_players[ source ]:updateStatus(  2, 4 )	
 				setElementData( team, "p_count", math.max( 0, getElementData(  team, "p_count" )-1 ) )
 				checkTeamsStatus( )
 			end
-
-			
+			if not ( ( getElementData( team1, "p_count" ) or 1 ) == 0 or ( getElementData( team2, "p_count" ) or 1 ) == 0 ) then
+				callClient( source, 'enabledSpectate', 250 )
+			end
 		else
 		--	setTimer( callClient, 1250, 1,  source, "spawnAgain" )
 			setTimer( callClient, 2000, 1,  source, "spawnAgain" )

@@ -40,6 +40,10 @@ function scaleByWidth ( w, s, i )
 	return tonumber( string.format( "%."..( i or 1 ).."f", screenWidth*( s / w ) ) )
 end
 
+function scaleInt( h ,s ,i )
+	return tonumber( string.format( "%."..( i or 1 ).."f", screenHeight*( s/h ) ) )
+end
+
 function getCamPos_cords_rot_dis( x,y,z,obrot ,dystans )	
     obrot = obrot/180*3.14159265358979
     x = x - ( math.sin(obrot) * dystans )
@@ -205,7 +209,7 @@ function  _onCoreStart( )
 	removeEventHandler( "onClientResourceStart", getResourceRootElement( getThisResource(  ) ), _onCoreStart )
 
   	local _ = _introDx
-	local tmpScale =  math.min( 1024, scaleByWidth( 1024, 1920 ) )
+	local tmpScale =  math.min( 1024, scaleInt( 1024, 1080 ) )
 	_.logo = { scale = tmpScale, x = ( screenWidth - tmpScale )/2, y = ( screenHeight - ( tmpScale*1.25 ) )/2,  start = getTickCount()+20000, end_ = getTickCount()+40000, add = 255/20000  }
 	_.download = { x = _.logo.x, y = _.logo.y + tmpScale/1.1, w = tmpScale, h = string.format( "%.0f", tmpScale / 10 )}
 	_.renderT = dxCreateRenderTarget( 2048, 2048/10, true  )

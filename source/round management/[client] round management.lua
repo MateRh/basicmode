@@ -24,6 +24,7 @@ function _p:updateStatus(  _i, _v )
   self._s[ _i ] = _v;
   locked[ self._ ] = true;
   setElementData( self._, '#u', { _i, _v } );
+  triggerEvent( 'onClientPlayerStatus', self._, _i, _v )
 end
 
 function _p:getStatus( _i )
@@ -68,6 +69,7 @@ function ( dataName )
 		local _e = getElementData( source, '#u' )
 			if type( _e[ 1 ] ) == 'number' then
 				_players[ source ]._s[ _e[ 1 ] ] = _e[ 2 ];
+				triggerEvent( 'onClientPlayerStatus', source, _e[ 1 ], _e[ 2 ] )
 			else
 				_players[ source ][ _e[ 1 ] ] = _e[ 2 ];
 			end	
@@ -80,3 +82,5 @@ end )
 	_initialLoaded( "source/round management/[client] round management.lua" )	
 
 end
+
+addEvent ( 'onClientPlayerStatus' )

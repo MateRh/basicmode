@@ -126,6 +126,8 @@
 		if pause == true then
 			return 0;
 		end	
+
+	
 		local teams_c = { getElementData(  getTeamByType( "Attack" ), "p_count" ), getElementData(  getTeamByType( "Defense" ), "p_count" ) }
 			if teams_c[1] == 0 or teams_c[2] == 0 then
 				local round_i = getElementData(global_element,"map_info")

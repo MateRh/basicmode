@@ -38,6 +38,26 @@ function ( dataName, old )
 		end	
 	end
 end )
+--[[
+addEventHandler ( "onClientPlayerStatus", localPlayer, function ( i, v )
+	if source == localPlayer then
+		if i == 2 and v == 4 then
+			if ( getElementData( getElementByIndex ( "root_gm_element",0 ) , "map_info")[1] ~= "Lobby" then
+
+				if ( getElementData( TableTeams[ 1 ], "p_count" ) or 1 ) == 0 or ( getElementData( TableTeams[ 2 ], "p_count" ) or 1 ) == 0 then
+					return 0;
+				end	
+				changeHudFunctionality( getElementData(getElementByIndex ( "root_gm_element",0 ) ,"map_info")[1], getElementData(getElementByIndex ( "root_gm_element",0 ) ,"map_info")[1]..": "..getElementData(getElementByIndex ( "root_gm_element",0 ) ,"map_info")[2], true ) 	
+				enabledSpectate( 250 )
+			end	
+		elseif i == 2 and v == 1 then 
+		
+
+		end	
+	end	
+end, false )	]]
+
+
 
 
 function disableSpecate ( )
@@ -375,8 +395,7 @@ function filterPlayers( t, team )
 			for k, v in ipairs( t ) do
 		
 				if getPlayerTeam( v ) == team then
-					local data = getElementData ( v, "p_status" )
-					if data[1] == 'c' and tonumber( data[2] ) == 6 then
+					if _players[ v ]:getStatus( 2 ) == 2 then
 						table.insert( _nT, v )
 					end
 				end

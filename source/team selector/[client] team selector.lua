@@ -232,6 +232,11 @@ function _team_selector.onMouseClick( __, __, ax, ay )
 			showHud()
 			--removeEventHandler( 'onClientRender', getRootElement(), intro.func )
 
+			if not ( ( getElementData( TableTeams[ 1 ], "p_count" ) or 1 ) == 0 or ( getElementData( TableTeams[ 2 ], "p_count" ) or 1 ) == 0 ) then
+				enabledSpectate( 2000 )
+				changeHudFunctionality( getElementData(getElementByIndex ( "root_gm_element",0 ) ,"map_info")[1], getElementData(getElementByIndex ( "root_gm_element",0 ) ,"map_info")[1]..": "..getElementData(getElementByIndex ( "root_gm_element",0 ) ,"map_info")[2], true ) 	
+			end
+
 		end	
 
 

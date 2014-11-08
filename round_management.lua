@@ -253,7 +253,7 @@ function pause_handler( player, cmd )
 					end	
 				end
 			end, 1000, 1 )	
-			callClient( getRootElement(), "pause_.response")
+			callClient( getRootElement(), "pause_.response" )
 			pause = 0
 			setTimer( checkTeamsStatus, 2500, 1 )
 			return  outputChatBox ( "#FF0000[INFO] #c8c8c8 The round has been unpaused. ( by #ffffff'".. getPlayerName( player ).."'#c8c8c8 )",  getRootElement(), 255, 255, 255, true )

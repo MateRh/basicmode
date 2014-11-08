@@ -524,7 +524,7 @@ function _core_attack_selector()
 	callServer( 'setElementFrozen', localPlayer, true )
 	callServer( 'setElementAlpha', localPlayer, 0 )
 	callServer( 'setElementCollisionsEnabled', localPlayer, false )
-	
+
 	t_spw_a = {r_anim = { rot=0,}, cache_i = {} ,tc=getTickCount(),a_gui={},id=1,anim=1,r_time=false,r_team=1,team=0,slot = 2,target={},scale_ = {348,409,220,35,65,440,0.15,14,202},spawns_t={},spw_r ={},tc=getTickCount(),ce={} }
 		setElementInterior( localPlayer, 0 )
 		resetSkyGradient( )
@@ -578,8 +578,11 @@ end
 
 		local player = _main_sel.player
 
-						if ( _players[ player ]:getStatus( 2 ) == 2 or _players[ player ]:getStatus( 3 ) == 10 ) then
-								sdasddsadsa()
+						if ( _players[ player ]:getStatus( 2 ) == 2 or _players[ player ]:getStatus( 3 ) == 10 ) and getPedOccupiedVehicle( player ) then
+								
+								
+								callServer( 'setElementAlpha', localPlayer, 255 )
+								callServer( 'setElementCollisionsEnabled', localPlayer, true )	
 								setCameraTarget( player )
 								removeEventHandler( 'onClientRender', getRootElement(  ), waitForMate )
 								showHud()
@@ -590,7 +593,7 @@ end
 								local x, y,  z = getElementPosition( player )
 								setElementPosition( localPlayer, x, y,  z )
 								setElementFrozen( localPlayer, true )
-								
+								sdasddsadsa()
 								setTimer( function ( ) 	
 									callServer( 'warpPedIntoVehicle', localPlayer, getPedOccupiedVehicle( player ), #getVehicleOccupants ( getPedOccupiedVehicle( player ) ) + 1  )
 									setTimer( onWeaponSelector, 500, 1 )
@@ -621,7 +624,7 @@ end
 									destroyElement( _main_sel.gui.tabPanel )
 									_main_sel.gui = {}
 
-								if ( _players[ player ]:getStatus( 2 ) == 2 or _players[ player ]:getStatus( 3 ) == 10 ) then
+								if ( _players[ player ]:getStatus( 2 ) == 2 or _players[ player ]:getStatus( 3 ) == 10 ) and getPedOccupiedVehicle( player ) then
 										sdasddsadsa()
 										showHud()
 										changeHudFunctionality( "base", map_preStart.map_name )

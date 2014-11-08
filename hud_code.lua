@@ -91,10 +91,12 @@ local scalar =  screenWidth  * ( 1 / 1920 )
 	end)
 	
 	function disableVehicleArmory( )
-		setControlState ( 'vehicle_fire', false )
-		setControlState ( 'vehicle_secondary_fire', false )
-		toggleControl ( 'vehicle_fire', false )
-		toggleControl ( 'vehicle_secondary_fire', false )
+		if getVehicleType ( getPedOccupiedVehicle( localPlayer ) ) ~= "BMX" then
+			setControlState ( 'vehicle_fire', false )
+			setControlState ( 'vehicle_secondary_fire', false )
+		end
+		--toggleControl ( 'vehicle_fire', false )
+		--toggleControl ( 'vehicle_secondary_fire', false )
 
 	end	
 
@@ -112,8 +114,8 @@ local para_info =  getTickCount() - 90000
 			return 0
 		end
 
-		toggleControl ( 'vehicle_fire', false )
-		toggleControl ( 'vehicle_secondary_fire', false )
+	--	toggleControl ( 'vehicle_fire', false )
+	--	toggleControl ( 'vehicle_secondary_fire', false )
 		callServer('setPedWeaponSlot',  localPlayer, 0 )
 		if seat == 0 then
 		

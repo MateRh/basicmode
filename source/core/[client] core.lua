@@ -330,7 +330,7 @@ addEventHandler( 'onClientResourceStart', getResourceRootElement( ), _onCoreStar
 addEventHandler( 'onClientRender', getRootElement(  ), farClipfun )
 addEventHandler( 'onClientPreRender', getRootElement(  ),  farClipfun )
 
-
+--[[
 setTimer( function() 
 addEventHandler( 'onClientRender', getRootElement(  ), function ( )
 	-- body
@@ -338,4 +338,4 @@ addEventHandler( 'onClientRender', getRootElement(  ), function ( )
 	dxDrawText( '1: '..tostring( _localPlayer:getStatus( 1 ) ), 100, 500)
 	dxDrawText( '2: '..tostring( _localPlayer:getStatus( 2 ) ), 100, 550)
 	dxDrawText( '3: '..tostring( _localPlayer:getStatus( 3 ) ), 100, 600)
-end ) end, 3000, 1 )
+end ) end, 3000, 1 )]]

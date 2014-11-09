@@ -5,6 +5,7 @@ local _spect_Render = { }
 local currentSpect = 0
 local currentSpect_player 
 local spectEnable = false
+--[[
 addEventHandler ( "onClientElementDataChange",localPlayer,
 function ( dataName, old )
 	if getElementType ( source ) == "player" and "p_status" then
@@ -38,7 +39,7 @@ function ( dataName, old )
 		end	
 	end
 end )
---[[
+
 addEventHandler ( "onClientPlayerStatus", localPlayer, function ( i, v )
 	if source == localPlayer then
 		if i == 2 and v == 4 then
@@ -82,6 +83,7 @@ function enabledSpectate( _delay )
 	if spectEnable == true then
 		return 0;
 	end	
+	_localPlayer:updateStatus(  2, 3 )
 	currentSpect = 0
 	_spect_Render.camera = 0
 	bindKey( "r", "up", spectNext )

@@ -436,7 +436,8 @@ bindKey( 'sprint', 'down', function ()
 						
 					bindKey( 'crouch', 'down', function ()
 						local weapon = getPedWeapon( localPlayer )
-						if weapon ~= 25 and weapon ~= 34 then
+						if weapon ~= 25 then
+						--if weapon ~= 25 and weapon ~= 34 then
 							return 0
 						end	
 

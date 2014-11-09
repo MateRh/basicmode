@@ -41,15 +41,18 @@ function finishRoundAnimation( team1,team2, reson, rounds, skip)
 	addEventHandler( "onClientRender", root, r_finishRoundPreAnimation )
 	hideHud()
 	if isElement( flashing_area ) then destroyElement( flashing_area ) end
+		disableSpecate ( )
+
 end
 
 function finishRoundCloseButton ( executed )
 	if not isElement( finish_round_t.gui.button ) then return 0 end
 	showCursor( false )
 	removeEventHandler ( "onClientGUIClick", finish_round_t.gui.button, finishRoundCloseButton )
-	if getTeamName( getPlayerTeam( localPlayer ) ) == 'Spectator' then
-		disableSpecate ( )
-	end	
+	--if getTeamName( getPlayerTeam( localPlayer ) ) == 'Spectator' then
+	--	disableSpecate ( )
+	--end	
+	disableSpecate ( )
 	if executed ~= -9 then	
 		sdasddsadsa(1000)
 		callServer("_spawn_in_lobby", localPlayer, getPlayerTeam( localPlayer ))	

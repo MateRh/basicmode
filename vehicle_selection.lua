@@ -389,7 +389,7 @@ function onVehicleAccpet()
 		showCursor(false)
 		
 			if _vehicleClass.fGui.no_w == nil then
-					onWeaponSelector()
+					onWeaponSelector( true )
 			else
 					showPlayerHudComponent( "radar", true )
 			end

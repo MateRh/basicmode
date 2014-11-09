@@ -3,16 +3,11 @@ _initialLoading[ "extensions/spawn_protect.lua" ] = function ( )
 
 local _protect = { render_ = {},  anim_sts_r = {}, anim_r_list = {}, was_enabled = false, slienttc = 0 }
 
-function _protect_enable( slient )
+function _protect_enable(  )
 	if getElementData( localPlayer, ":_protec" ) == 1 then
 		return 0
 	end	
 	setElementData( localPlayer, ":_protec", 1 )
-	if slient or _protect.was_enabled  then
-		_protect.slienttc = getTickCount(  )
-		return
-	end	
-	_protect.was_enabled = true
 	_protect.was_enabled = true
 	_protect.render_.tick = getTickCount()
 	--playSFX("script", 16, 5, false)
@@ -26,14 +21,18 @@ function _protect_enable( slient )
 	_protect.render_.y =  screenHeight * 0.05
 	_protect.render_.y_2 =  _protect.render_.y + _protect.render_.high*1.5
 	local time_s =  (client_settings_t[ string.lower( getElementData(getElementByIndex ( "root_gm_element",0 ),"map_info")[1] ) ][1][2] )* 1000
-	time_s = time_s - ( ( getTickCount(  ) - _protect.slienttc ) / 1000 )
-	time_s = time_s - ( ( getTickCount(  ) - _protect.slienttc ) / 1000 )
+	time_s = time_s - (  math.max( 0, getTickCount(  ) - _protect.slienttc )  )
 	time_s = math.max( 3000, time_s )
 	_protect.render_.time = time_s
 	_protect.render_.tick = getTickCount() + time_s 
 	addEventHandler ( "onClientRender", getRootElement(), _protect.render, false, "low" )
 	_protect.timer_ = setTimer( _protect.disable,time_s, 1 )
+	_protect.slienttc = 0
 end
+
+addEventHandler ( "onClientPlayerSpawn", getLocalPlayer(), function (  )
+	_protect.slienttc = getTickCount(  )
+end )
 
 
 function _protect.render( )

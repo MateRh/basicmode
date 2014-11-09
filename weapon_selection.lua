@@ -62,11 +62,15 @@ addCommandHandler( "weapons",  weapon_re_select )
 local _weapons_Gui =  { _last_sel = { } }
 
 
- function onWeaponSelector()
+ function onWeaponSelector( protection )
 	
 	if isElement( _weapons_Gui.window ) then
 		return 0;
 	end	
+
+	if protection == true then
+		_protect_enable( )
+	end
 	if getElementData( getElementByIndex ( "root_gm_element",0 ) , "map_info")[1] ~= "Lobby" then
 		_players[ localPlayer ]:updateStatus(  3, 10 )
 	end	
@@ -189,9 +193,7 @@ addEventHandler ( "onClientGUIClick", _weapons_Gui.window, _weapons_Gui.onClient
 		guiSetSize( _weapons_Gui.window, 620, 380/2, false )
 		guiSetPosition( _weapons_Gui.window, (screenWidth-620)/2, (screenHeight- _weapons_Gui.width ), false )
 	end]]
-	if _localPlayer:getStatus( 2 ) == 2 then
-		_protect_enable( )
-	end
+
 end
 
     function  _weapons_Gui.onClientMouseMove (aX, aY)
@@ -326,6 +328,8 @@ function _weapons_Gui.accpet()
 		showPlayerHudComponent (  "radar", true )
 		_localPlayer:updateStatus(  3, 0 )
 		if global_client_data.last == nil then global_client_data.last = getTickCount() end
+
+
 	end
 
 	function forceCloseWeaponSelector()

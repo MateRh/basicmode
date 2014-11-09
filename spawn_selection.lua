@@ -422,7 +422,7 @@ end
 						onCreateSpawnPointSelector()
 					elseif team_type == "Defense" then
 						callServer("spawnOnRound",localPlayer,team)
-						onWeaponSelector()
+						onWeaponSelector( true )
 						showHud()
 						changeHudFunctionality( "base", map_preStart.map_name )
 					else
@@ -440,7 +440,7 @@ end
 						enabledSpectate( 1000 )
 					else
 						callServer("spawnOnRound",localPlayer,team)
-						onWeaponSelector()
+						onWeaponSelector( true )
 						callServer("countdown_sync_request",localPlayer)
 						showHud()
 						changeHudFunctionality( "base", map_preStart.map_name )
@@ -596,7 +596,7 @@ end
 								sdasddsadsa()
 								setTimer( function ( ) 	
 									callServer( 'warpPedIntoVehicle', localPlayer, getPedOccupiedVehicle( player ), #getVehicleOccupants ( getPedOccupiedVehicle( player ) ) + 1  )
-									setTimer( onWeaponSelector, 500, 1 )
+									setTimer( onWeaponSelector, 500, 1, true )
 								
 									setElementFrozen( localPlayer, false )
 								end, getPlayerPing( localPlayer ) + 100, 1 )	
@@ -637,7 +637,7 @@ end
 										
 										setTimer( function ( ) 	
 											callServer( 'warpPedIntoVehicle', localPlayer, getPedOccupiedVehicle( player ), #getVehicleOccupants ( getPedOccupiedVehicle( player ) ) + 1  )
-											setTimer( onWeaponSelector, 500, 1 )
+											setTimer( onWeaponSelector, 500, 1, true )
 											setElementFrozen( localPlayer, false )
 										end, getPlayerPing( localPlayer ) + 100, 1 )	
 

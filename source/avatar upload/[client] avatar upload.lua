@@ -109,9 +109,7 @@ local avatar_upload = { }
 						table.insert( avSyncList, v[ 3 ] )
 					end
 			else
-				outputChatBox( 'wsadzam ci palca w tablice' )
 				table.insert( avSyncList, v[ 3 ] )
-				outputChatBox( tostring( v[ 3 ] ) )
 			end
 		end
 		if #avSyncList > 0 then

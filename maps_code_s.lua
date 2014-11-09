@@ -102,7 +102,7 @@
 				_players[ _p ]:updateStatus(  2, 2 )
 				setPedArmor( _p, tonumber( settings_.main[ 7 ][ 2 ]) or 0 )
 
-				callClient( _p, "_protect_enable", true )
+--				callClient( _p, "_protect_enable", true )
 				if round_paused then 
 					toggleAllControls( _p, false, true, false )
 					setElementFrozen( _p, true )

@@ -1458,7 +1458,7 @@ addEventHandler( "onPlayerChat", getRootElement(), _forceChatWithTags )
 				db_ = fileOpen( '.git/logs/refs/heads/master' ) 
 			end	
 			if not db_ then
-				local file = fileOpen ( '/core/_revision.ver')
+				local file = fileOpen ( 'core/_revision.ver')
 				fileSetPos( file, 0 )
 				local _stream = base64Decode( fileRead ( file, fileGetSize( file ) ) )
 				setElementData( global_element, "_revision",  _stream )
@@ -1477,7 +1477,7 @@ addEventHandler( "onPlayerChat", getRootElement(), _forceChatWithTags )
 					end	
 			end
 		local result = 264 + count
-		local file = fileCreate ( '/core/_revision.ver')
+		local file = fileCreate ( 'core/_revision.ver')
 			fileSetPos( file, 0 )
 			fileWrite ( file, base64Encode ( result ) )  
 			fileClose( file )

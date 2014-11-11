@@ -1,204 +1,183 @@
 <meta>
-<info author="Mateusz 'Mate_' Daszuta aka Rhbk" type="misc" name="BasicMode" version="0.0.2" edf:definition="edf/basicmode.edf" />
-
-
+	<info author="Mateusz 'Mate_' Daszuta aka Rhbk" type="misc" name="BasicMode" version="0.0.2" edf:definition="edf/basicmode.edf" />
+	  <min_mta_version client="1.4.0-9.06779.0" server="1.4.0-9.06779.0" />
 
 	<!-- Shader 2D Blur -->
-	<script src="shaders/r_blur/c_blur.lua" type="client" />
-	<file src="shaders/r_blur/blurH.fx" type="client" />
-	<file src="shaders/r_blur/blurV.fx" type="client" />
-	<file src="shaders/r_blur/mta-helper.fx" type="client" />
-	<file src="core/1BB87D41D15FE27B500A4BFCDE01BB0E.png" type="client" />
+
+		<script src="shaders/r_blur/c_blur.lua" type="client" />
+		<file src="shaders/r_blur/blurH.fx" type="client" />
+		<file src="shaders/r_blur/blurV.fx" type="client" />
+		<file src="shaders/r_blur/mta-helper.fx" type="client" />
+		<file src="core/1BB87D41D15FE27B500A4BFCDE01BB0E.png" type="client" />
 	
 
 	<script src="source/core/[client] core.lua" type="client"/>	
 
-  <min_mta_version client="1.3.5-9.06355.0" server="1.3.5-9.06139" />
-			<!-- INCLUDES -->
-	<include resource="killmessages" />
-	<!-- <include resource="scoreboard" />
 
+	<!-- INCLUDES -->
 
-			 SCRIPTS -->
+		<include resource="killmessages" />
 
-	<file src="sounds/blip.wav" download="false" />
-	<file src="sounds/end.wav" download="false" />
-	<file src="sounds/beep.wav" download="false" />
-	<file src="sounds/help.wav" download="false" />
-	<file src="img/map.jpg" download="false" />
+	<!-- FILES -->
 
-	<file src="shaders/car_reflect/images/smallnoise3d.dds" download="false" />
-	<file src="shaders/detail/media/detail22.png" download="false" />
-	<file src="shaders/detail/media/detail58.png" download="false" />
-	<file src="shaders/detail/media/detail68.png" download="false" />
-	<file src="shaders/detail/media/detail63.png" download="false" />
-	<file src="shaders/detail/media/detail04.png" download="false" />
-	<file src="shaders/detail/media/detail29.png" download="false" />
-	<file src="shaders/detail/media/detail35T.png" download="false" />
-	<file src="shaders/detail/media/detail55.png" download="false" />
-	<file src="shaders/detail/media/dirty.png" download="false" />
+		<file src="sounds/blip.wav" download="false" />
+		<file src="sounds/end.wav" download="false" />
+		<file src="sounds/beep.wav" download="false" />
+		<file src="sounds/help.wav" download="false" />
+		<file src="img/map.jpg" download="false" />
 
-	<file src="shaders/water/images/wavemap.png" download="false" />
-	<file src="shaders/water/images/cube_env.dds" download="false" />
+		<file src="shaders/car_reflect/images/smallnoise3d.dds" download="false" />
+		<file src="shaders/detail/media/detail22.png" download="false" />
+		<file src="shaders/detail/media/detail58.png" download="false" />
+		<file src="shaders/detail/media/detail68.png" download="false" />
+		<file src="shaders/detail/media/detail63.png" download="false" />
+		<file src="shaders/detail/media/detail04.png" download="false" />
+		<file src="shaders/detail/media/detail29.png" download="false" />
+		<file src="shaders/detail/media/detail35T.png" download="false" />
+		<file src="shaders/detail/media/detail55.png" download="false" />
+		<file src="shaders/detail/media/dirty.png" download="false" />
 
+		<file src="shaders/water/images/wavemap.png" download="false" />
+		<file src="shaders/water/images/cube_env.dds" download="false" />
 
+	    <file src="media/files/aw_streettree3.dff" download="false" />
+		<file src="media/files/bush14_lvs.dff" download="false" />
+	    <file src="media/files/elmdead_hi.dff" download="false" />
+	    <file src="media/files/elmred_hi.dff" download="false" />
+	    <file src="media/files/elmred_hism.dff" download="false" />
+	    <file src="media/files/elmsparse_hi.dff" download="false" />
+	    <file src="media/files/elmsparse_hism.dff" download="false" />
+	    <file src="media/files/elmtreegrn_hi.dff" download="false" />
+	    <file src="media/files/elmtreegrn_hism.dff" download="false" />
+	    <file src="media/files/elmwee_hism.dff" download="false" />
+		<file src="media/files/genveg_bush07.dff" download="false" />
+		<file src="media/files/genveg_bush09.dff" download="false" />
+		<file src="media/files/genveg_bush11.dff" download="false" />
+	    <file src="media/files/gta_deserttrees.txd" download="false" />
+	    <file src="media/files/gta_potplants2.txd" download="false" />
+	    <file src="media/files/gta_potplantsaa.txd" download="false" />
+	    <file src="media/files/gta_proc_bush.txd" download="false" />
+	    <file src="media/files/gta_tree_bevhills.txd" download="false" />
+	    <file src="media/files/gta_tree_boak.txd" download="false" />
+	    <file src="media/files/gta_tree_palm.txd" download="false" />
+	    <file src="media/files/gtatreeshi.txd" download="false" />
+	    <file src="media/files/hotelback2.dff" download="false" />
+	    <file src="media/files/hotelbackpool_sfs.txd" download="false" />
+	    <file src="media/files/kb_planter+bush2.dff" download="false" />
+	    <file src="media/files/kb_planter+bush.dff" download="false" />
+	    <file src="media/files/new_bushsm.dff" download="false" />
+		<file src="media/files/new_bushtest.dff" download="false" />
+	    <file src="media/files/scumwires1_las2.dff" download="false" />
+	    <file src="media/files/sm_bevhiltree.dff" download="false" />
+	    <file src="media/files/sm_bevhiltreepv.dff" download="false" />
+	    <file src="media/files/sm_bushytree.dff" download="false" />
+	    <file src="media/files/sm_des_agave2.dff" download="false" />
+	    <file src="media/files/sm_des_bush1.dff" download="false" />
+	    <file src="media/files/sm_des_cact_bsh.dff" download="false" />
+	    <file src="media/files/sm_des_cactflr.dff" download="false" />
+	    <file src="media/files/sm_veg_tree4.dff" download="false" />
+	    <file src="media/files/sm_veg_tree4_vbig.dff" download="false" />
+	    <file src="media/files/sm_veg_tree5.dff" download="false" />
+	    <file src="media/files/sm_veg_tree6.dff" download="false" />
+	    <file src="media/files/sm_veg_tree7_big.dff" download="false" />
+	    <file src="media/files/sm_veg_tree7vbig.dff" download="false" />
+	    <file src="media/files/sm_vegvbbigbrn.dff" download="false" />
+	    <file src="media/files/stormd_fill1_las2.dff" download="false" />
+	    <file src="media/files/stormd_filllas2.txd" download="false" />
+	    <file src="media/files/tree1.txd" download="false" />
+	    <file src="media/files/tree2.txd" download="false" />
+	    <file src="media/files/tree_hipoly06.dff" download="false" />
+	    <file src="media/files/veg_leavesplnt.txd" download="false" />
+	    <file src="media/files/veg_palm04.dff" download="false" />
+	    <file src="media/files/veg_palmkb1.dff" download="false" />
+	    <file src="media/files/veg_palmkb2.dff" download="false" />
+	    <file src="media/files/veg_palmkb13.dff" download="false" />
+	    <file src="media/files/vgs_palm03.dff" download="false" />
+	    <file src="media/files/wiresetc_las2.txd" download="false" />
+	    <file src="core/voteSystemImages" download="false" />
 
-    <file src="media/files/aw_streettree3.dff" download="false" />
-	<file src="media/files/bush14_lvs.dff" download="false" />
-    <file src="media/files/elmdead_hi.dff" download="false" />
-    <file src="media/files/elmred_hi.dff" download="false" />
-    <file src="media/files/elmred_hism.dff" download="false" />
-    <file src="media/files/elmsparse_hi.dff" download="false" />
-    <file src="media/files/elmsparse_hism.dff" download="false" />
-    <file src="media/files/elmtreegrn_hi.dff" download="false" />
-    <file src="media/files/elmtreegrn_hism.dff" download="false" />
-    <file src="media/files/elmwee_hism.dff" download="false" />
-	<file src="media/files/genveg_bush07.dff" download="false" />
-	<file src="media/files/genveg_bush09.dff" download="false" />
-	<file src="media/files/genveg_bush11.dff" download="false" />
-    <file src="media/files/gta_deserttrees.txd" download="false" />
-    <file src="media/files/gta_potplants2.txd" download="false" />
-    <file src="media/files/gta_potplantsaa.txd" download="false" />
-    <file src="media/files/gta_proc_bush.txd" download="false" />
-    <file src="media/files/gta_tree_bevhills.txd" download="false" />
-    <file src="media/files/gta_tree_boak.txd" download="false" />
-    <file src="media/files/gta_tree_palm.txd" download="false" />
-    <file src="media/files/gtatreeshi.txd" download="false" />
-    <file src="media/files/hotelback2.dff" download="false" />
-    <file src="media/files/hotelbackpool_sfs.txd" download="false" />
-    <file src="media/files/kb_planter+bush2.dff" download="false" />
-    <file src="media/files/kb_planter+bush.dff" download="false" />
-    <file src="media/files/new_bushsm.dff" download="false" />
-	<file src="media/files/new_bushtest.dff" download="false" />
-    <file src="media/files/scumwires1_las2.dff" download="false" />
-    <file src="media/files/sm_bevhiltree.dff" download="false" />
-    <file src="media/files/sm_bevhiltreepv.dff" download="false" />
-    <file src="media/files/sm_bushytree.dff" download="false" />
-    <file src="media/files/sm_des_agave2.dff" download="false" />
-    <file src="media/files/sm_des_bush1.dff" download="false" />
-    <file src="media/files/sm_des_cact_bsh.dff" download="false" />
-    <file src="media/files/sm_des_cactflr.dff" download="false" />
-    <file src="media/files/sm_veg_tree4.dff" download="false" />
-    <file src="media/files/sm_veg_tree4_vbig.dff" download="false" />
-    <file src="media/files/sm_veg_tree5.dff" download="false" />
-    <file src="media/files/sm_veg_tree6.dff" download="false" />
-    <file src="media/files/sm_veg_tree7_big.dff" download="false" />
-    <file src="media/files/sm_veg_tree7vbig.dff" download="false" />
-    <file src="media/files/sm_vegvbbigbrn.dff" download="false" />
-    <file src="media/files/stormd_fill1_las2.dff" download="false" />
-    <file src="media/files/stormd_filllas2.txd" download="false" />
-    <file src="media/files/tree1.txd" download="false" />
-    <file src="media/files/tree2.txd" download="false" />
-    <file src="media/files/tree_hipoly06.dff" download="false" />
-    <file src="media/files/veg_leavesplnt.txd" download="false" />
-    <file src="media/files/veg_palm04.dff" download="false" />
-    <file src="media/files/veg_palmkb1.dff" download="false" />
-    <file src="media/files/veg_palmkb2.dff" download="false" />
-    <file src="media/files/veg_palmkb13.dff" download="false" />
-    <file src="media/files/vgs_palm03.dff" download="false" />
-    <file src="media/files/wiresetc_las2.txd" download="false" />
-    <file src="core/voteSystemImages" download="false" />
+		<file src="fonts/TravelingTypewriter.ttf" download="false" />
+		<file src="fonts/visitor.ttf" download="false" />
+		<file src="fonts/squarethings.ttf" download="false" />
+		<file src="fonts/TallLean.ttf" download="false" />
+		<file src="fonts/Inconsolata.otf" download="false" />
+		<file src="fonts/PTM55F.ttf" download="false" />
 
+		<file src="img/scoreboard/background_9.png" download="false" />
+		<file src="img/scoreboard/bg_shadow_hor.png" download="false" />
+		<file src="img/scoreboard/bg_shadow_ver.png" download="false" />
+		<file src="img/scoreboard/bg_shadow_cor.png" download="false" />
+		<file src="img/back.png" download="false" />
+		<file src="img/bound.png" download="false" />
+		<file src="img/colors_palette.png" download="false" />
+		<file src="img/cross.png" download="false" />
+		<file src="img/no_avatar.png" download="false" />
+		<file src="img/hud.png" download="false" />
+		<file src="img/dead.png" download="false" />
+		<file src="img/scorebg.png" download="false" />
+		<file src="img/scorebg_rev.png" download="false" />
+		<file src="img/frame.png" download="false" />
+		<file src="img/white_pixel.png" download="false" />
+		<file src="img/green_pixel.png" download="false" />
+		<file src="img/mark.png" download="false" />
+		<file src="img/mark_w.png" download="false" />
+		<file src="img/flag.png" download="false" />
+		<file src="img/capture_bar_bg.png"  />
+		<file src="img/capture_flag.png" download="false" />
+		<file src="img/capture_bar.png"  />
+		<file src="img/bar.png" download="false" />
+		<file src="img/transparent.png" download="false" />
+		<file src="img/_up.png" download="false" />
+		<file src="img/_down.png" download="false" />
+		<file src="img/blip.png" download="false" />
+		<file src="core/1BB87D41D15FE27B500A4BFCDE01BB0E" />
+		<file src="core/grenade.dff" download="false" />
+		<file src="core/grenade.txd" download="false" />
 
+		<file src="shaders/colorcorrection/shader.fx" type="client"/>
+		<file src="shaders/colorcorrection/sharpen.fx" type="client"/>
 
-	
-	<file src="fonts/TravelingTypewriter.ttf" download="false" />
-	<file src="fonts/visitor.ttf" download="false" />
-	<file src="fonts/squarethings.ttf" download="false" />
-	<file src="fonts/TallLean.ttf" download="false" />
-	<file src="fonts/Inconsolata.otf" download="false" />
-	<file src="fonts/PTM55F.ttf" download="false" />
+		<file src="shaders/depth_of_field/fx/dBlurH.fx" type="client" />
+		<file src="shaders/depth_of_field/fx/dBlurV.fx" type="client" />
+		<file src="shaders/depth_of_field/fx/getDepth.fx" type="client" />
+		<file src="shaders/depth_of_field/fx/mta-helper.fx" type="client" />
 
+		<file src="shaders/car_reflect/fx/car_refgrun.fx" type="client" />
+		<file src="shaders/car_reflect/fx/car_refgene.fx" type="client" />
+		<file src="shaders/car_reflect/fx/mta-helper.fx" type="client" />
 
+		<file src="shaders/water/fx/water_ref.fx" type="client" />
+		<file src="shaders/water/fx/mta-helper.fx" type="client" />
 
-		
-	
-	<file src="img/scoreboard/background_9.png" download="false" />
+		<file src="shaders/bump/shader_bump.fx" type="client" />
+		<file src="shaders/bump/mta-helper.fx" type="client" />
+		<file src="shaders/bump/blurH.fx" type="client" />
+		<file src="shaders/bump/blurV.fx" type="client" />
 
-	<file src="img/scoreboard/bg_shadow_hor.png" download="false" />
-	<file src="img/scoreboard/bg_shadow_ver.png" download="false" />
-	<file src="img/scoreboard/bg_shadow_cor.png" download="false" />
-	<file src="img/back.png" download="false" />
-	<file src="img/bound.png" download="false" />
-	<file src="img/colors_palette.png" download="false" />
-	<file src="img/cross.png" download="false" />
-	<file src="img/no_avatar.png" download="false" />
-	<file src="img/hud.png" download="false" />
-	<file src="img/dead.png" download="false" />
-	<file src="img/scorebg.png" download="false" />
-	<file src="img/scorebg_rev.png" download="false" />
-	<file src="img/frame.png" download="false" />
-	<file src="img/white_pixel.png" download="false" />
-	<file src="img/green_pixel.png" download="false" />
+		<file src="shaders/bloom/fx/addBlend.fx" type="client" />
+		<file src="shaders/bloom/fx/blurH.fx" type="client" />
+		<file src="shaders/bloom/fx/blurV.fx" type="client" />
+		<file src="shaders/bloom/fx/brightPass.fx" type="client" />
+		<file src="shaders/bloom/fx/mta-helper.fx" type="client" />	
 
+		<file src="shaders/detail/fx/detail.fx" type="client" />
+		<file src="shaders/detail/fx/mta-helper.fx" type="client" />
 
-	<file src="img/mark.png" download="false" />
-	<file src="img/mark_w.png" download="false" />
-	<file src="img/flag.png" download="false" />
-	<file src="img/capture_bar_bg.png"  />
-	<file src="img/capture_flag.png" download="false" />
-	<file src="img/capture_bar.png"  />
-	<file src="img/bar.png" download="false" />
-	<file src="img/transparent.png" download="false" />
-	<file src="img/_up.png" download="false" />
-	<file src="img/_down.png" download="false" />
-	<file src="img/blip.png" download="false" />
-	<file src="core/1BB87D41D15FE27B500A4BFCDE01BB0E" />
-	<file src="core/grenade.dff" download="false" />
-	<file src="core/grenade.txd" download="false" />
+	<!-- SCRIPTS -->
 
 	<script src="shaders/colorcorrection/shader.lua" type="client"/>
-	<file src="shaders/colorcorrection/shader.fx" type="client"/>
-	<file src="shaders/colorcorrection/sharpen.fx" type="client"/>
-	
 
 	<script src="shaders/depth_of_field/c_dof.lua" type="client" />
-	<file src="shaders/depth_of_field/fx/dBlurH.fx" type="client" />
-	<file src="shaders/depth_of_field/fx/dBlurV.fx" type="client" />
-	<file src="shaders/depth_of_field/fx/getDepth.fx" type="client" />
-	<file src="shaders/depth_of_field/fx/mta-helper.fx" type="client" />
-	
-	
-	<!--"Shader - Car Paint reflect"-->
+
 	<script src="shaders/car_reflect/c_car_reflect.lua" type="client" />
-	<file src="shaders/car_reflect/fx/car_refgrun.fx" type="client" />
-	<file src="shaders/car_reflect/fx/car_refgene.fx" type="client" />
-	<file src="shaders/car_reflect/fx/mta-helper.fx" type="client" />
 
-	
-	
-	<!-- Shader - WaterShine -->
 	<script src="shaders/water/c_water_ref.lua" type="client" />
-	<file src="shaders/water/fx/water_ref.fx" type="client" />
-	<file src="shaders/water/fx/mta-helper.fx" type="client" />
 
-	
-	
-	<!-- Shader - Bump Mapping  -->
 	<script src="shaders/bump/c_shader_bump.lua" type="client" />
-	<file src="shaders/bump/shader_bump.fx" type="client" />
-	<file src="shaders/bump/mta-helper.fx" type="client" />
-	<file src="shaders/bump/blurH.fx" type="client" />
-	<file src="shaders/bump/blurV.fx" type="client" />
-	
-	
-	
-	<!-- Shader - Bloom  -->
-	<script src="shaders/bloom/c_bloom.lua" type="client" />
-	<file src="shaders/bloom/fx/addBlend.fx" type="client" />
-	<file src="shaders/bloom/fx/blurH.fx" type="client" />
-	<file src="shaders/bloom/fx/blurV.fx" type="client" />
-	<file src="shaders/bloom/fx/brightPass.fx" type="client" />
-	<file src="shaders/bloom/fx/mta-helper.fx" type="client" />	
-	
-	
-	
-	<!-- Shader - Detail  -->
-	<script src="shaders/detail/c_detail.lua" type="client" />
-	<file src="shaders/detail/fx/detail.fx" type="client" />
-	<file src="shaders/detail/fx/mta-helper.fx" type="client" />
 
-			<!-- Mian code -->
+	<script src="shaders/bloom/c_bloom.lua" type="client" />
+
+	<script src="shaders/detail/c_detail.lua" type="client" />
 	
 	<script src="client.lua" type="client" />	
 	<script src="round_finish_client.lua" type="client" />	
